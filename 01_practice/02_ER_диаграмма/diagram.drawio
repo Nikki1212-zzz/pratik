@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-10-26T12:00:00.000Z" agent="draw.io" version="24.0.0" type="device">
+  <diagram id="er_diagram" name="ER-Диаграмма">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t_2" value="&lt;b&gt;BRAND&lt;/b&gt;&lt;hr/&gt;int | brand_id (PK)&lt;br/&gt;text | brand_name &lt;br/&gt;text | country " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="50" y="70" width="275" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="t_3" value="&lt;b&gt;CAR&lt;/b&gt;&lt;hr/&gt;int | car_id (PK)&lt;br/&gt;int | brand_id (FK)&lt;br/&gt;text | model &lt;br/&gt;int | prod_year &lt;br/&gt;text | vin &lt;br/&gt;real | price &lt;br/&gt;text | color " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="530" y="55" width="280" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="t_4" value="&lt;b&gt;CLIENT&lt;/b&gt;&lt;hr/&gt;int | client_id (PK)&lt;br/&gt;text | fio &lt;br/&gt;text | phone &lt;br/&gt;text | passport &lt;br/&gt;text | email " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="50" y="360" width="275" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="t_5" value="&lt;b&gt;EMPLOYEE&lt;/b&gt;&lt;hr/&gt;int | employee_id (PK)&lt;br/&gt;text | fio &lt;br/&gt;text | position &lt;br/&gt;text | phone " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="50" y="640" width="275" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="t_6" value="&lt;b&gt;SALE&lt;/b&gt;&lt;hr/&gt;int | sale_id (PK)&lt;br/&gt;date | sale_date &lt;br/&gt;int | car_id (FK)&lt;br/&gt;int | client_id (FK)&lt;br/&gt;int | employee_id (FK)&lt;br/&gt;real | final_price " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
+          <mxGeometry x="530" y="430" width="280" height="202" as="geometry" />
+        </mxCell>
+        <mxCell id="t_7" value="&lt;b&gt;ADDITIONAL_OPTION&lt;/b&gt;&lt;hr/&gt;int | option_id (PK)&lt;br/&gt;text | option_name &lt;br/&gt;real | option_price " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#D0ECE7;strokeColor=#16A085;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="130" width="280" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="t_8" value="&lt;b&gt;SALE_OPTION&lt;/b&gt;&lt;hr/&gt;int | sale_id (FK)&lt;br/&gt;int | option_id (FK)&lt;br/&gt;int | quantity " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="460" width="280" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="r_9" value="выпускает" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;" edge="1" parent="1" source="t_2" target="t_3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_10" value="продаётся в" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;" edge="1" parent="1" source="t_3" target="t_6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_11" value="оформляет" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;" edge="1" parent="1" source="t_4" target="t_6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_12" value="сопровождает" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;" edge="1" parent="1" source="t_5" target="t_6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_13" value="включает доп. опции" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;" edge="1" parent="1" source="t_6" target="t_8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_14" value="выбирается в" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;" edge="1" parent="1" source="t_7" target="t_8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

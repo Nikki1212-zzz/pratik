@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-10-26T12:00:00.000Z" agent="draw.io" version="24.0.0" type="device">
+  <diagram id="er_diagram" name="ER-Диаграмма">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t_2" value="&lt;b&gt;CLIENT&lt;/b&gt;&lt;hr/&gt;int | id (PK)&lt;br/&gt;text | fio &lt;br/&gt;text | phone &lt;br/&gt;text | discount_card " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="50" y="70" width="265" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="t_3" value="&lt;b&gt;CAR&lt;/b&gt;&lt;hr/&gt;int | id (PK)&lt;br/&gt;text | brand_model &lt;br/&gt;text | license_plate &lt;br/&gt;int | wheel_radius &lt;br/&gt;int | client_id (FK)" style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="510" y="60" width="265" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="t_4" value="&lt;b&gt;MASTER&lt;/b&gt;&lt;hr/&gt;int | id (PK)&lt;br/&gt;text | fio &lt;br/&gt;text | phone &lt;br/&gt;int | experience " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="970" y="70" width="265" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="t_5" value="&lt;b&gt;SERVICE_ORDER&lt;/b&gt;&lt;hr/&gt;int | id (PK)&lt;br/&gt;date | order_date &lt;br/&gt;int | car_id (FK)&lt;br/&gt;int | master_id (FK)&lt;br/&gt;real | total_sum " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="510" y="370" width="265" height="174" as="geometry" />
+        </mxCell>
+        <mxCell id="t_6" value="&lt;b&gt;SERVICE&lt;/b&gt;&lt;hr/&gt;int | id (PK)&lt;br/&gt;text | service_name &lt;br/&gt;real | price &lt;br/&gt;int | duration_min " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
+          <mxGeometry x="50" y="540" width="265" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="t_7" value="&lt;b&gt;ORDER_SERVICE&lt;/b&gt;&lt;hr/&gt;int | order_id (FK)&lt;br/&gt;int | service_id (FK)&lt;br/&gt;int | wheels_count " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#D0ECE7;strokeColor=#16A085;" vertex="1" parent="1">
+          <mxGeometry x="510" y="650" width="265" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="r_8" value="владеет" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;" edge="1" parent="1" source="t_2" target="t_3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_9" value="обслуживается" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;" edge="1" parent="1" source="t_3" target="t_5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_10" value="выполняет" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;" edge="1" parent="1" source="t_4" target="t_5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_11" value="включает" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;" edge="1" parent="1" source="t_5" target="t_7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r_12" value="входит в заказ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;startArrow=ERmandOne;" edge="1" parent="1" source="t_6" target="t_7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

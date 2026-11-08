@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-10-26T12:00:00.000Z" agent="draw.io" version="24.0.0" type="device">
+  <diagram id="er_diagram" name="ER-Диаграмма Библиотека">
+    <mxGraphModel dx="1422" dy="798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t_authors" value="&lt;b&gt;AUTHORS&lt;/b&gt;&lt;hr/&gt;int | author_id (PK)&lt;br/&gt;text | full_name &lt;br/&gt;text | country &lt;br/&gt;int | birth_year " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="50" y="60" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="t_genres" value="&lt;b&gt;GENRES&lt;/b&gt;&lt;hr/&gt;int | genre_id (PK)&lt;br/&gt;text | genre_name &lt;br/&gt;text | age_rating &lt;br/&gt;int | max_loan_days " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
+          <mxGeometry x="50" y="340" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="t_halls" value="&lt;b&gt;HALLS&lt;/b&gt;&lt;hr/&gt;int | hall_id (PK)&lt;br/&gt;text | hall_name &lt;br/&gt;int | floor &lt;br/&gt;int | capacity " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#F8CECC;strokeColor=#B85450;" vertex="1" parent="1">
+          <mxGeometry x="50" y="620" width="280" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="t_books" value="&lt;b&gt;BOOKS&lt;/b&gt;&lt;hr/&gt;int | book_id (PK)&lt;br/&gt;text | title &lt;br/&gt;int | author_id (FK)&lt;br/&gt;int | genre_id (FK)&lt;br/&gt;int | hall_id (FK)&lt;br/&gt;int | publish_year &lt;br/&gt;int | total_copies &lt;br/&gt;real | price " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="530" y="290" width="290" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="t_readers" value="&lt;b&gt;READERS&lt;/b&gt;&lt;hr/&gt;int | reader_id (PK)&lt;br/&gt;text | full_name &lt;br/&gt;date | birth_date &lt;br/&gt;text | phone &lt;br/&gt;text | email &lt;br/&gt;date | reg_date " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="60" width="280" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="t_loans" value="&lt;b&gt;BOOK_LOANS&lt;/b&gt;&lt;hr/&gt;int | loan_id (PK)&lt;br/&gt;int | book_id (FK)&lt;br/&gt;int | reader_id (FK)&lt;br/&gt;int | librarian_id (FK)&lt;br/&gt;date | loan_date &lt;br/&gt;date | due_date &lt;br/&gt;date | return_date &lt;br/&gt;real | fine_amount &lt;br/&gt;text | status " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="340" width="290" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="t_librarians" value="&lt;b&gt;LIBRARIANS&lt;/b&gt;&lt;hr/&gt;int | librarian_id (PK)&lt;br/&gt;text | full_name &lt;br/&gt;text | position &lt;br/&gt;text | phone &lt;br/&gt;int | experience_years &lt;br/&gt;real | salary " style="verticalAlign=top;align=left;overflow=fill;html=1;fillColor=#D0ECE7;strokeColor=#16A085;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="680" width="290" height="200" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
